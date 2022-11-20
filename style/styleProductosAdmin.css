@@ -1,0 +1,291 @@
+
+.card {
+    margin: 8px;
+    width: 14rem;
+}
+
+.card:hover {
+    /* background: linear-gradient(rgb(84, 120, 124), rgb(89, 178, 216), rgb(84, 120, 124)); */
+    background: linear-gradient(rgb(143, 175, 179), rgb(139, 203, 231), rgb(143, 175, 179));
+    cursor: pointer;
+    color: #fff;
+}
+
+#imgTwo {
+    width: 0%;
+    position: absolute;
+}
+
+.card:hover #imgTwo {
+    width: 100%;
+}
+
+
+
+#img-favorite {
+    width: 25px;
+    position: absolute;
+    margin: 0.5rem;
+}
+
+#imgfavoritetrue {
+    width: 0px;
+    position: absolute;
+    margin: 0.5rem;
+}
+
+#img-favorite:hover ~ #imgfavoritetrue {
+    width: 25px;
+}
+
+
+
+
+.talle-genero {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.talle-generox2 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    border-top: none;
+}
+
+.card img {
+    width: auto;
+}
+
+.card-body a button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.card-body a img {
+    width: 35px;
+}
+
+.card-body a img:hover {
+    transition: 1.5s;
+    transform: rotate(360deg);
+}
+
+.img-add {
+    width: 30px;
+}
+
+.img-add:hover {
+    transition: 1.5s;
+    transform: rotate(360deg);
+}
+
+#carrito {
+    color: #fff;
+    width: 25px;
+}
+
+.productos {
+    width: 80%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    width: 50%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.container-global-form {
+    display: flex;
+    justify-content: center;
+    /* background: linear-gradient(rgb(83, 231, 206), rgb(97, 193, 238), rgb(83, 231, 206)); */
+    background: linear-gradient(#08aac7a4, #2ebd8d85);
+}
+
+.name-tittle a {
+    font-size: 1.3rem;
+    color: black;
+    font-size: 18px;
+}
+
+.show-img {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.show-img-one {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+.show-img-one img {
+    border-radius: 6rem;
+}
+
+.show-img-one h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+
+
+
+.btnTable {
+    border: 0px solid rgba(0, 0, 0, 0.125);
+    background: none;
+}
+
+#imgadddelete {
+    width: 22px;
+}
+
+#imgadddelete:hover {
+    transition: 1.5s;
+    transform: rotate(360deg);
+}
+
+
+
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+    background-color: #CCCCCC;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #0d90c4;
+    background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
+}
+
+
+
+.profile-container-global {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.profile-container {
+    background: rgba(0, 0, 0, 0.103);
+    width: 40%;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+}
+
+.datos-user {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-top: 1px solid black;
+}
+
+.datos-titulo-user {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.update-datos-profile {
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 858px) {
+    .card {
+        width: 10rem;
+        font-size: 0.8rem;
+    }
+
+    .productos {
+        width: 100%;
+    }
+
+    .form-container {
+        width: 80%;
+    }
+
+    #carrito {
+        width: 15px;
+    }
+
+    .card-body h5 {
+        font-size: 1rem;
+    }
+
+    .show-img {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .show-img-one {
+        width: 90%;
+    }
+
+    .marca-genero {
+        display: none;
+    }
+
+    .profile-container-global {
+        padding: 1rem;
+    }
+
+    .profile-container {
+        width: 100%;
+    }
+
+    .datos-user {
+        padding: 1rem;
+    }
+
+
+
+    #img-favorite {
+        width: 18px;
+        position: absolute;
+        margin: 0.3rem;
+    }
+    
+    #imgfavoritetrue {
+        width: 0px;
+        position: absolute;
+        margin: 0.3rem;
+    }
+    
+    #img-favorite:hover ~ #imgfavoritetrue {
+        width: 18px;
+    }
+
+    .nav-item a {
+        font-size: 0.7rem;
+    }
+}

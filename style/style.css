@@ -1,0 +1,287 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    background: black;
+    overflow-x: hidden;
+}
+
+.img-name-tittle {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.img-name-tittle a {
+    text-decoration: none;
+}
+
+.img-tittle a img {
+    width: 60px;
+}
+
+.name-tittle {
+    padding-left: 0.5rem;
+    color: black;
+}
+
+.name-tittle a {
+    font-size: 1.3rem;
+    color: black;
+    font-size: 18px;
+}
+
+.name-tittle a:hover {
+    color: black;
+}
+
+.navbar-nav li a {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.btn-reg {
+    padding: 0; 
+    border: none; 
+    background: none;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    margin-left: 2rem;
+}
+
+
+/*===============================================================================*/
+
+section {
+    height: 50rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("../img/football-background.jpg");
+}
+
+.buynow-container {
+    margin-left: 12rem;
+    width: 15rem;
+}
+
+.buynow-container a {
+    width: 100%;
+}
+
+.buynow-container a button {
+    /* margin-left: 10rem; */
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: linear-gradient(rgb(30, 118, 158), rgb(8, 23, 66));
+    color: #fff;
+    border-radius: 35px;
+}
+
+.buynow-container a button img {
+    width: 25px
+}
+
+.buynow-container a button:hover {
+    /* background: rgb(37, 37, 37); */
+    background: linear-gradient(rgb(42, 47, 61), rgb(30, 118, 158));
+    cursor: pointer;
+}
+
+/*=======================================FOOTER===============================================*/
+
+.footer-container {
+    /* background-color: rgba(15, 169, 216, 0.925); */
+    background: linear-gradient(rgba(41, 188, 233, 0.925), rgb(42, 47, 61));
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem .5rem 2rem;
+}
+
+.footer {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.redes-container {
+    /* background-color: #e4405f; */
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-container h4 {
+    font-size: 1.2rem;
+}
+
+.option-footer {
+    /* background-color: antiquewhite; */
+    width: 25%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.option-footer a {
+    /* background-color: #006236; */
+    color: white;
+    font-size: 1rem;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.copy-container {
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.copy-container h5 {
+    font-size: 1rem;
+}
+
+.option-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    text-decoration: none;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    color: #fff;
+    margin: 1rem;
+    background-color: #0d2033;
+    text-align: center;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+}
+
+.redes-sociales .facebook:hover {
+    background-color: #fff;
+}
+
+.redes-sociales .instagram:hover {
+    background-color: #fff;
+    color: #e4405f;
+}
+
+.redes-sociales .twitter:hover {
+    background-color: #fff;
+}
+
+
+
+
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+    background-color: #CCCCCC;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #0d90c4;
+    background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
+}
+
+
+
+
+
+@media (max-width: 858px) {
+    .footer {
+        flex-direction: column;
+        width: 100vw;
+        text-align: center;
+        margin: 0%;
+        align-items: center;
+    }
+    
+    .option-footer {
+        /* background-color: #0d2033; */
+        width: 100%;
+        padding: 0%;
+        padding-top: 1rem;
+        align-items: center;
+    }
+    
+    .option-footer a {
+        /* background-color: #006236; */
+        width: fit-content;
+        font-size: 1rem;
+    }
+    
+    .redes-container {
+        width: 100%;
+        text-align: center;
+        padding-top: 2rem;
+    }
+    
+    .redes-container h4 {
+        font-size: 1rem;
+    }
+    
+    .footer-container {
+        padding: 0%;
+    }
+    
+    .copy-container h5 {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+
+
+    section {
+        background-image: url("../img/backgroundx4.jpg");
+        align-items: flex-end;
+        padding-bottom: 2rem;
+        justify-content: center;
+    }
+
+    .buynow-container {
+        margin-left: 0%;
+        width: 13rem;
+    }
+
+    .buynow-container a button {
+        margin-left: 0%;
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .buynow-container a button img {
+        width: 20px
+    }
+
+    .nav-item {
+        margin-left: 0%;
+    }
+
+    .name-tittle {
+        display: none;
+    }
+}
