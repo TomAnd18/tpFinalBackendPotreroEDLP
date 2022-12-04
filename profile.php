@@ -28,15 +28,15 @@
     <title>Perfil</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav style="position: fixed; width: 100vw;" class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
 
             <div class="img-name-tittle">
                 <div class="img-tittle">
-                    <a href="./allProductos.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
+                    <a href="./tiendaFutbol.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
                 </div>
                 <div class="name-tittle">
-                    <a href="./allProductos.php">TIENDA FUTBOL</a>
+                    <a href="./tiendaFutbol.php">TIENDA FUTBOL</a>
                 </div>
             </div>
 
@@ -46,38 +46,51 @@
             <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#!"> <img width="27px" src="./img/anadir-al-carritoo.png" alt=""> </a>
+                        <a class="nav-link" href="./carrito.php"> <i style="color: #0095ff;" class="fa-solid fa-cart-shopping"></i> <span id="count-carrito">
+                            <?php
+                                session_start();
+
+                                error_reporting(0);
+
+                                if(isset($_SESSION['carro'])) {
+                                    $carrito=$_SESSION['carro'];  
+                                    echo sizeof($carrito);
+                                } else {
+                                    echo 0;
+                                }
+                            ?>
+                        </span> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php"> <img width="27px" src="./img/boton-de-inicio.png" alt="Home"> INICIO</a>
+                        <a class="nav-link" href="./index.php"> <i style="color: #0095ff;" class="fa-solid fa-house"></i> INICIO</a>
                     </li>
                     <?php
                       
-                      $sesion = $_SESSION;
+                        $sesion = $_SESSION;
 
                         if($_SESSION['user'] == 'tom@gmail') {
-                          echo '
+                            echo '
                             <li class="nav-item">
-                              <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <img width="25px" src="./img/usuariox2.png" alt="User"> '. $_SESSION["user"] .'</a>
+                                <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <i style="color: #0095ff;" class="fa-solid fa-user"></i> '. $_SESSION["user"] .'</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="./tableDatos.php"> <img width="32px" src="./img/apoyo.png" alt="Admin"> ADMINISTRADOR </a>
+                                <a class="nav-link" href="./admin.php"> <i style="color: #0095ff;" class="fa-sharp fa-solid fa-user-gear"></i> ADMINISTRADOR </a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="./logout.php"> <img width="29px" src="./img/cerrar-sesion.png" alt="Logout"> CERRAR SESION </a>
+                                <a class="nav-link" href="./logout.php"> <i style="color: #0095ff;" class="fa-solid fa-right-from-bracket"></i> CERRAR SESION </a>
                             </li>
-                          ';
+                            ';
                         } else {
-                          echo '
+                            echo '
                             <li class="nav-item">
-                              <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <img width="25px" src="./img/usuariox2.png" alt="User"> '. $_SESSION["user"] .'</a>
+                                <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <i style="color: #0095ff;" class="fa-solid fa-user"></i> '. $_SESSION["user"] .'</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="./logout.php"> <img width="29px" src="./img/cerrar-sesion.png" alt="Logout"> CERRAR SESION </a>
+                                <a class="nav-link" href="./logout.php"> <i style="color: #0095ff;" class="fa-solid fa-right-from-bracket"></i> CERRAR SESION </a>
                             </li>
-                          ';
+                            ';
                         }
-                      ?>
+                    ?>
                 </ul>
             </div>
         </div>
@@ -94,7 +107,7 @@
     ?>
     
     
-    <div class="profile-container-global">
+    <div style="padding-top: 110px;" class="profile-container-global">
         <div class="profile-container">
             <div class="datos-titulo-user"> 
                 <div><p class="text-uppercase">DATOS DE MI CUENTA <?php if($dataUser['email'] == 'tom@gmail') { echo '(ADMIN)'; } ?> </p></div>

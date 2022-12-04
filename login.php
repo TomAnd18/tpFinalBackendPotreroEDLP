@@ -24,7 +24,7 @@
 </head>
 <body>
     
-    <section class="vh-100" style="background: linear-gradient(#00B6FA, #fff, #fff, #00B6FA);">
+    <section class="vh-100" style="background: linear-gradient(#2580d4, #57DACE);">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">

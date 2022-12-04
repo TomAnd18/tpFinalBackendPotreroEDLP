@@ -31,18 +31,20 @@
 
     <link rel="shortcut icon" href="./img/tiendaOnline.png">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <title>Admin</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-light">
+<body onload="showTableProductos('users');">
+    <nav style="position: fixed; width: 100vw; z-index: 12;" class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
 
             <div class="img-name-tittle">
                 <div class="img-tittle">
-                    <a href="./allProductos.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
+                    <a href="./tiendaFutbol.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
                 </div>
                 <div class="name-tittle">
-                    <a href="./allProductos.php">TIENDA FUTBOL</a>
+                    <a href="./tiendaFutbol.php">TIENDA FUTBOL</a>
                 </div>
             </div>
 
@@ -52,29 +54,42 @@
             <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#!"> <img width="27px" src="./img/anadir-al-carritoo.png" alt=""> </a>
+                        <a class="nav-link" href="./carrito.php"> <i style="color: #0095ff;" class="fa-solid fa-cart-shopping"></i> <span id="count-carrito">
+                            <?php
+                                session_start();
+
+                                error_reporting(0);
+
+                                if(isset($_SESSION['carro'])) {
+                                    $carrito=$_SESSION['carro'];  
+                                    echo sizeof($carrito);
+                                } else {
+                                    echo 0;
+                                }
+                            ?>
+                        </span> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php"> <img width="27px" src="./img/boton-de-inicio.png" alt="Home"> INICIO</a>
+                        <a class="nav-link" href="./index.php"> <i style="color: #0095ff;" class="fa-solid fa-house"></i> INICIO</a>
                     </li>
                     <li class="nav-item">
-                      <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <img width="25px" src="./img/usuariox2.png" alt="User"> <?php echo $_SESSION["user"];?></a>
+                      <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <i style="color: #0095ff;" class="fa-solid fa-user"></i> <?php echo $_SESSION["user"];?></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./tableDatos.php"> <img width="32px" src="./img/apoyo.png" alt="Admin"> ADMINISTRADOR </a>
+                      <a class="nav-link" href="./admin.php"> <i style="color: #0095ff;" class="fa-sharp fa-solid fa-user-gear"></i> ADMINISTRADOR </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./logout.php"> <img width="29px" src="./img/cerrar-sesion.png" alt="Logout"> CERRAR SESION </a>
+                      <a class="nav-link" href="./logout.php"> <i style="color: #0095ff;" class="fa-solid fa-right-from-bracket"></i> CERRAR SESION </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div>
+    <div style="padding-top: 80px;">
       <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><button style="color: blue;text-transform: uppercase;" class="btn-reg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalTwo">Agregar Producto <img class="img-add" src="./img/agregar.png" alt="Add Producto"></button></a>
+            <a style="margin: 0%; padding: 0%; height: 100%;" class="nav-link" aria-current="page"><button style="color: blue;text-transform: uppercase; height: 100%; padding: 0.5rem 1rem;" class="btn-reg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalTwo">Agregar Producto <img class="img-add" src="./img/agregar.png" alt="Add Producto"></button></a>
             
                       
             <div class="modal fade" id="exampleModalTwo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,17 +155,17 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">VISTAS</a>
+            <a style="height: 100%;" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">VISTAS</a>
             <ul class="dropdown-menu">
               
               <li> 
-                <a class="dropdown-item" href="./admin.php">Card</a>
+                <a class="dropdown-item" onclick="showCardProductos('card');">Card</a>
               </li>
               <li> 
-                <a class="dropdown-item" href="./tableDatos.php">Table</a>
+                <a class="dropdown-item" onclick="showTableProductos('table');">Table</a>
               </li>
               <li> 
-                <a class="dropdown-item" href="./usersDatos.php">Users</a>
+                <a class="dropdown-item" onclick="showUsers('users');">Users</a>
               </li>
 
             </ul>
@@ -172,29 +187,7 @@
    
     <div style="display: flex; align-items: center;justify-content: center;padding-top: 2rem;padding-bottom: 2rem;">            
       <div class="productos">
-        <?php while(  $prenda = mysqli_fetch_array($datos) ) { ?>    
-            
-          <div class="card">
-              <img src=" data:image/png;base64, <?php echo base64_encode($prenda['imagen_one'])?> " class="card-img-top" alt="prenda">
-              <img src=" data:image/png;base64, <?php echo base64_encode($prenda['imagen_two'])?> " class="card-img-top" id="imgTwo" alt="prenda">
-              <div class="card-body">
-                  <h5 class="card-title"> <?php echo "$",number_format($prenda['precio'], 2, ",", ".")?> </h5>
-                  <p class="card-text"> <?php echo $prenda['tipo'].' '.$prenda['marca'] ?> </p>
-              </div>
-              <div class="talle-genero">
-                <p class="card-text"> <?php echo $prenda['genero'].' - '.$prenda['talle'] ?> </p>
-              </div>
-              <div class="talle-generox2">
-                <p class="card-text"> <?php echo $prenda['stock']." unidades" ?> </p>
-              </div>
-              <div style="display: flex;justify-content: space-around;" class="card-body">
-                  <a href="./editar.php?id=<?php echo $prenda['id'];?>"><button> <img src="./img/actualizar.png" alt="Actualizar Prenda"></button></a>
-                  <a onclick="confirmarDelete(<?php echo $prenda['id'];?>);" href="#"><button> <img src="./img/eliminar.png" alt="Eliminar Prenda"> </button></a>
-              </div>
-          </div>
 
-
-        <?php } ?>
       </div>
     </div>    
 
@@ -207,5 +200,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
+
+    <script src="./script/conexionAjax.js"></script>
 </body>
 </html>

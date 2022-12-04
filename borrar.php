@@ -21,5 +21,5 @@
 
     mysqli_query($conexion, $consulta);
 
-    header('location: tableDatos.php');
+    header('location: admin.php');
 ?>

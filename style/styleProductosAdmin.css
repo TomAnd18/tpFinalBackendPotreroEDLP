@@ -20,22 +20,27 @@
     width: 100%;
 }
 
+.card:hover #btn-favorite-one {
+    color: black;
+}
 
 
-#img-favorite {
-    width: 25px;
+
+#btn-favorite-one {
     position: absolute;
+    font-size: 1.5rem;
     margin: 0.5rem;
 }
 
-#imgfavoritetrue {
-    width: 0px;
+#btn-favorite-two {
     position: absolute;
+    font-size: 0;
     margin: 0.5rem;
 }
 
-#img-favorite:hover ~ #imgfavoritetrue {
-    width: 25px;
+#btn-favorite-one:hover ~ #btn-favorite-two {
+    font-size: 1.5rem;
+    color: red;
 }
 
 
@@ -57,6 +62,15 @@
     border-top: none;
 }
 
+.add-touch:hover #carrito {
+    transition: 1.5s;
+    transform: rotate(360deg);
+}
+
+.add-touch:hover {
+    color: #fff;
+}
+
 .card img {
     width: auto;
 }
@@ -76,6 +90,11 @@
     transform: rotate(360deg);
 }
 
+.nav-link:hover .img-add {
+    transition: 1.5s;
+    transform: rotate(360deg);
+}
+
 .img-add {
     width: 30px;
 }
@@ -91,6 +110,14 @@
 }
 
 .productos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productosTwo {
     width: 80%;
     flex-wrap: wrap;
     display: flex;
@@ -184,7 +211,8 @@
 }
 
 .profile-container {
-    background: rgba(0, 0, 0, 0.103);
+    /* background: rgba(0, 0, 0, 0.103); */
+    background: rgba(0, 0, 0, 0.055);
     width: 40%;
     border: 1px solid black;
     font-size: 1.2rem;
@@ -213,19 +241,263 @@
 
 
 
+/*==============================================================================================*/
+
+.filter-btn {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    color: #0d6efd;
+    width: max-content;
+    padding: 0%;
+    margin: 0%;
+}
+
+.user-register {
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+/*==============================================================================================*/
+
+.carrito-container {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ver-carrito {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns-carrito {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-imgCarrito img {
+    width: 100px;
+}
+
+.precioFinal-container {
+    background: #49a4ffd9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.precioFinal-container p {
+    padding: 0%;
+    margin: 0%;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#carrito-vacio {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#carrito-vacio p {
+    margin: 0%;
+    padding: 0%;
+    margin-right: 1rem;
+}
+
+.buy-carrito-container {
+    text-decoration: none;
+    width: 90%;
+}
+
+#btn-buy-carrito {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: #3483fa;
+}
+
+#btn-buy-carrito:hover {
+    background: #2d6bc9;
+}
+
+.seguir-compra {
+    text-decoration: none;
+    width: 40%;
+}
+
+#btn-seguir {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: #3483fa;
+}
+
+#btn-seguir:hover {
+    background: #2d6bc9;
+}
+
+#btn-finalizar {
+    width: 100%;
+    padding: 0.8rem 0;
+}
+
+.precioFinal-container p {
+    margin-right: 1rem;
+}
+
+/*==============================================================================================*/
+
+.pagar-container {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.inputs-pagar {
+    width: 60%;
+}
+
+.datos-ciudad {
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+}
+
+#ciudad-container {
+    width: 45%;
+}
+
+#codigo-postal-container {
+    width: 45%;
+}
+
+.btn-volver-container {
+    width: 100%;
+}
+
+.btn-volver {
+    width: min-content;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.btn-volver:hover {
+    cursor: pointer;
+}
+
+/*==============================================================================================*/
+
+.thanks-container {
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#thanks {
+    width: 60%;
+    text-align: center;
+}
+
+#thanks p {
+    font-size: 2rem;
+}
+
+.img-thanks {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.img-thanks img {
+    width: 400px;
+}
+
+.mensaje-envio {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.msg-envio {
+    margin: 0%; 
+    font-size: 1.1rem;
+}
+
+.back-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.back-a {
+    width: 100%;
+}
+
+
+#back-tienda {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: #3483fa;
+}
+
+#back-tienda:hover {
+    background: #2d6bc9;
+}
+
+/*==============================================================================================*/
+
+.control-compras {
+    width: 100%;
+    position: fixed;
+    bottom: 1%;
+    left: 2%;
+    z-index: 11;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#content-register-user {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+}
+
+/*==============================================================================================*/
 
 
 
-
-
-
-@media (max-width: 858px) {
+@media (max-width: 992px) {
     .card {
         width: 10rem;
         font-size: 0.8rem;
     }
 
-    .productos {
+    .productosTwo {
         width: 100%;
     }
 
@@ -268,24 +540,94 @@
     }
 
 
+    #btn-favorite-one {
+        font-size: 1.2rem;
+        margin: 0.3rem;
+    }
+    
+    #btn-favorite-two {
+        font-size: 0;
+        margin: 0.3rem;
+    }
+    
+    #btn-favorite-one:hover ~ #btn-favorite-two {
+        font-size: 1.2rem;
+    }
 
-    #img-favorite {
-        width: 18px;
-        position: absolute;
-        margin: 0.3rem;
-    }
-    
-    #imgfavoritetrue {
-        width: 0px;
-        position: absolute;
-        margin: 0.3rem;
-    }
-    
-    #img-favorite:hover ~ #imgfavoritetrue {
-        width: 18px;
-    }
 
     .nav-item a {
         font-size: 0.7rem;
+    }
+
+
+    .user-register {
+        font-size: 0.8rem;
+    }
+
+    #content-register-user {
+        padding: 0.5rem;
+    }
+
+    .mostrar-r {
+        display: none;
+    }
+
+    .container-imgCarrito img {
+        width: 50px;
+    }
+
+    .btns-carrito {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .seguir-compra {
+        width: 90%;
+        margin: 1rem;
+    }
+
+    .control-compras {
+        font-size: 0.8rem;
+        justify-content: center;
+    }
+
+    .ver-carrito {
+        width: 90%;
+    }
+
+    .seguir-compra {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    .inputs-pagar {
+        width: 100%;
+    }
+
+    #thanks {
+        width: 100%;
+    }
+
+    #thanks p {
+        font-size: 1.2rem;
+    }
+
+    .img-thanks img {
+        width: 180px;
+    }
+
+    .mensaje-envio {
+        width: 90%;
+    }
+
+    .msg-envio {
+        font-size: 1rem;
+    }
+
+    .back-container {
+        width: 90%;
     }
 }

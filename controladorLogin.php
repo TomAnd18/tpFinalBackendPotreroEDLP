@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\type;
+
     session_start();
     error_reporting(0);
 
@@ -18,7 +21,7 @@
             $sql = $conexion->query(" select * from usuarios where email='$usuario' and password='$password'");
             if($datos=$sql->fetch_object()) {
                 
-                $_SESSION["user"] = $usuario;
+                $_SESSION["user"] = $datos->email;
 
                 $consulta = "UPDATE `usuarios` SET `active` = 'true' WHERE `usuarios`.`email` = '$usuario'";
                 mysqli_query($conexion,$consulta);
@@ -26,7 +29,7 @@
                 header("location:index.php");
                 
             } else {
-                echo '<div style="display: flex;justify-content: center;" class="alert alert-danger" role="alert"> Email o contraseña incorrecta </div>';
+                echo gettype($datos),'<div style="display: flex;justify-content: center;" class="alert alert-danger" role="alert"> Email o contraseña incorrecta</div>';
             }
         }
     }

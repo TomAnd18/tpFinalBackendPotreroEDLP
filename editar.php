@@ -52,10 +52,10 @@
 
             <div class="img-name-tittle">
                 <div class="img-tittle">
-                    <a href="./allProductos.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
+                    <a href="./tiendaFutbol.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
                 </div>
                 <div class="name-tittle">
-                    <a href="./allProductos.php">Tienda Futbol</a>
+                    <a href="./tiendaFutbol.php">Tienda Futbol</a>
                 </div>
             </div>
 
@@ -64,9 +64,6 @@
             </button>
             <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!"> <img width="27px" src="./img/anadir-al-carritoo.png" alt=""> </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./index.php"> <img width="27px" src="./img/boton-de-inicio.png" alt="Home"> INICIO</a>
                     </li>
@@ -91,7 +88,6 @@
         $precio = $datos['precio'];
         $genero = $datos['genero'];
         $stock = $datos['stock'];
-        // $favorito = $datos['favorito'];
         $imagen_one= $datos['imagen_one'];
         $imagen_two = $datos['imagen_two'];
     ?>
@@ -152,7 +148,7 @@
 
                 <div style="text-align: center;" class="col-12">
                     <button style="text-transform: uppercase;" type="submit" class="btn btn-primary">ACTUALIZAR</button>
-                    <a style="color: #fff;text-decoration: none;" href="./tableDatos.php"><button style="text-transform: uppercase;" type="button" class="btn btn-primary">CANCELAR</button></a>
+                    <a style="color: #fff;text-decoration: none;" href="./admin.php"><button style="text-transform: uppercase;" type="button" class="btn btn-primary">CANCELAR</button></a>
                 </div>
             </form>
         </div>

@@ -23,13 +23,11 @@
     $stock = $_POST['stock'];
     $foto = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
     $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-    $favorito = 'false';
 
-    $consulta = "INSERT INTO ropa (id, tipo, marca, talle, precio, genero, stock, favorito, imagen_one, imagen_two)
-          VALUES ('','$tipo','$marca','$talle','$precio','$genero','$stock','$favorito','$foto','$imagen')";
+    $consulta = "INSERT INTO ropa (id, tipo, marca, talle, precio, genero, stock, imagen_one, imagen_two)
+          VALUES ('','$tipo','$marca','$talle','$precio','$genero','$stock','$foto','$imagen')";
 
     mysqli_query($conexion,$consulta);
 
-    //rederigir a index
-    header('location: tableDatos.php');
+    header('location: admin.php');
 ?>

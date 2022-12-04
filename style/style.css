@@ -54,7 +54,7 @@ body {
 /*===============================================================================*/
 
 section {
-    height: 50rem;
+    height: 55rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -77,9 +77,11 @@ section {
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
-    background: linear-gradient(rgb(30, 118, 158), rgb(8, 23, 66));
-    color: #fff;
+    /* background: linear-gradient(rgb(30, 118, 158), rgb(8, 23, 66)); */
+    background: #fff;
+    color: rgb(2, 157, 247);
     border-radius: 35px;
+    border-color: rgb(2, 157, 247);
 }
 
 .buynow-container a button img {
@@ -88,23 +90,26 @@ section {
 
 .buynow-container a button:hover {
     /* background: rgb(37, 37, 37); */
-    background: linear-gradient(rgb(42, 47, 61), rgb(30, 118, 158));
+    /* background: linear-gradient(rgb(42, 47, 61), rgb(30, 118, 158)); */
+    background: rgba(255, 255, 255, 0.774);
     cursor: pointer;
+    border-color: rgb(2, 157, 247);
 }
 
 /*=======================================FOOTER===============================================*/
 
 .footer-container {
-    /* background-color: rgba(15, 169, 216, 0.925); */
-    background: linear-gradient(rgba(41, 188, 233, 0.925), rgb(42, 47, 61));
+    /* background: linear-gradient(rgba(41, 188, 233, 0.925), rgb(42, 47, 61)); */
+    background: #fff;
     width: 100vw;
     display: flex;
     flex-direction: column;
     padding: 3rem 2rem .5rem 2rem;
+    border-top: 1px solid black;
 }
 
 .footer {
-    color: white;
+    color: #3b5999;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -133,7 +138,7 @@ section {
 
 .option-footer a {
     /* background-color: #006236; */
-    color: white;
+    color: #3b5999;
     font-size: 1rem;
     width: fit-content;
     text-decoration: none;
@@ -141,7 +146,7 @@ section {
 
 .copy-container {
     width: 100%;
-    color: white;
+    color: #3b5999;
     display: flex;
     justify-content: center;
     padding-top: 2rem;
@@ -152,7 +157,7 @@ section {
 }
 
 .option-footer a:hover {
-    color: #fff;
+    color: #3b5999;
     text-decoration: underline;
 }
 
@@ -167,26 +172,37 @@ section {
     text-decoration: none;
     width: 3rem;
     height: 3rem;
-    line-height: 3rem;
+    line-height: 2.9rem;
     color: #fff;
     margin: 1rem;
-    background-color: #0d2033;
+    background-color: #fff;
     text-align: center;
     border-radius: 1.5rem;
     font-size: 2rem;
 }
 
-.redes-sociales .facebook:hover {
-    background-color: #fff;
+.facebook i{
+    color: #3b5999;
 }
 
-.redes-sociales .instagram:hover {
-    background-color: #fff;
+.instagram i{
     color: #e4405f;
 }
 
+.twitter i{
+    color: #55acee;
+}
+
+.redes-sociales .facebook:hover {
+    background-color: #00000013;
+}
+
+.redes-sociales .instagram:hover {
+    background-color: #00000013;
+}
+
 .redes-sociales .twitter:hover {
-    background-color: #fff;
+    background-color: #00000013;
 }
 
 
@@ -208,10 +224,22 @@ section {
 }
 
 
+/*=======================================================================================================================*/
+
+.user-register {
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+}
+
+/*=======================================================================================================================*/
 
 
 
-@media (max-width: 858px) {
+@media (max-width: 992px) {
     .footer {
         flex-direction: column;
         width: 100vw;
@@ -246,6 +274,7 @@ section {
     
     .footer-container {
         padding: 0%;
+        padding-top: 2rem;
     }
     
     .copy-container h5 {
@@ -283,5 +312,13 @@ section {
 
     .name-tittle {
         display: none;
+    }
+
+    .user-register {
+        font-size: 0.8rem;
+    }
+
+    #content-register-user {
+        padding: 0.5rem;
     }
 }

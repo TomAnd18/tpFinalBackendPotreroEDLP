@@ -15,78 +15,103 @@
 
     <link rel="shortcut icon" href="./img/tiendaOnline.png">
 
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            setTimeout(function() {
+                $("#content-register-user").fadeOut(1500);
+            },5000);
+        });
+    </script>
+
     <title>Tienda Online</title>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav style="position: fixed; width: 100vw;" class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
 
-            <div class="img-name-tittle">
-                <div class="img-tittle">
-                    <a href="./allProductos.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
-                </div>
-                <div class="name-tittle">
-                    <a href="./allProductos.php">TIENDA FUTBOL</a>
-                </div>
-            </div>
+              <div class="img-name-tittle">
+                  <div class="img-tittle">
+                      <a href="./tiendaFutbol.php"> <img src="./img/tiendaOnline.png" alt="Tienda Tomas"> </a>
+                  </div>
+                  <div class="name-tittle">
+                      <a href="./tiendaFutbol.php">TIENDA FUTBOL</a>
+                  </div>
+              </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!"> <img width="27px" src="./img/anadir-al-carritoo.png" alt=""> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.php"> <img width="27px" src="./img/boton-de-inicio.png" alt="Home"> INICIO</a>
-                    </li>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav">
 
-                    <?php
-                      session_start();
-                      $sesion = $_SESSION;
+                      <li class="nav-item">
+                        <a class="nav-link" href="./carrito.php"> <i style="color: #0095ff;" class="fa-solid fa-cart-shopping"></i> <span id="count-carrito">
+                        <?php
+                            session_start();
 
-                      if($sesion == null || $sesion == '') {
-                        echo '
+                            error_reporting(0);
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> <button class="btn-reg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> <img width="24px" src="./img/user_add.png" alt="Add User"> REGISTRARSE</button> </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./login.php"> <img width="29px" src="./img/login.png" alt="Login"> INGRESAR</a>
-                        </li>
-                        ';
-                      } else {
+                            if(isset($_SESSION['carro'])) {
+                                $carrito=$_SESSION['carro'];  
+                                echo sizeof($carrito);
+                            } else {
+                                echo 0;
+                            }
+                          ?>
+                        </span> </a>
+                      </li>
+                      
+                      <li class="nav-item">
+                          <a class="nav-link" href="./index.php"> <i style="color: #0095ff;" class="fa-solid fa-house"></i> INICIO</a>
+                      </li>
 
-                        if($_SESSION['user'] == 'tom@gmail') {
+                      <?php
+                        // session_start();
+                        $sesion = $_SESSION;
+
+                        if($sesion == null || $sesion == '') {
                           echo '
-                            <li class="nav-item">
-                              <a class="nav-link" href="./profile.php"> <img width="25px" src="./img/usuariox2.png" alt="User"> '. $_SESSION["user"] .'</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="./tableDatos.php"> <img width="32px" src="./img/apoyo.png" alt="Admin"> ADMINISTRADOR </a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="./logout.php"> <img width="29px" src="./img/cerrar-sesion.png" alt="Logout"> CERRAR SESION </a>
-                            </li>
+
+                          <li class="nav-item">
+                              <a class="nav-link"> <button class="btn-reg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i style="color: #0095ff;" class="fa-solid fa-user-plus"></i> REGISTRARSE</button> </a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="./login.php"> <i style="color: #0095ff;" class="fa-solid fa-right-to-bracket"></i> INGRESAR</a>
+                          </li>
                           ';
                         } else {
-                          echo '
-                            <li class="nav-item">
-                              <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <img width="25px" src="./img/usuariox2.png" alt="User"> '. $_SESSION["user"] .'</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="./logout.php"> <img width="29px" src="./img/cerrar-sesion.png" alt="Logout"> CERRAR SESION </a>
-                            </li>
-                          ';
+
+                          if($_SESSION['user'] == 'tom@gmail') {
+                            echo '
+                              <li class="nav-item">
+                                <a class="nav-link" href="./profile.php"> <i style="color: #0095ff;" class="fa-solid fa-user"></i> '. $_SESSION["user"] .'</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="./admin.php"> <i style="color: #0095ff;" class="fa-sharp fa-solid fa-user-gear"></i> ADMINISTRADOR </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="./logout.php"> <i style="color: #0095ff;" class="fa-solid fa-right-from-bracket"></i> CERRAR SESION </a>
+                              </li>
+                            ';
+                          } else {
+                            echo '
+                              <li class="nav-item">
+                                <a style="text-transform: uppercase;" class="nav-link" href="./profile.php"> <i style="color: #0095ff;" class="fa-solid fa-user"></i> '. $_SESSION["user"] .'</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="./logout.php"> <i style="color: #0095ff;" class="fa-solid fa-right-from-bracket"></i> CERRAR SESION </a>
+                              </li>
+                            ';
+                          }
+
                         }
+                        ?>
 
-                      }
-                      ?>
-
-                </ul>
-            </div>
+                  </ul>
+              </div>
         </div>
     </nav>
 
@@ -98,7 +123,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="registrarse.php" method="post">
+                <form action="" method="post">
                     <div class="mb-3">
                         <label for="nombre" class="col-form-label">Nombre</label>
                         <input name="nombre" type="text" class="form-control" id="nombre" maxlength="20" required>
@@ -117,7 +142,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                        <input name="btnregistrar" class="btn btn-primary" type="submit" value="Registrarse">
                     </div>
                 </form>
             </div>
@@ -126,18 +151,24 @@
         </div>
     </div>
 
+    <div class="user-register">
+        <?php include("./controlarRegistro.php") ?>
+    </div>
+
+    <div style="height: 7vh;"></div>
+
     <section>
         <div class="buynow-container">
-            <a href="./allProductos.php"> <button>Comprar Ahora <img src="./img/flecha-derecha.png" alt="Buy Now"></button> </a>
+            <a href="./tiendaFutbol.php"> <button>Comprar Ahora <img src="./img/flecha-derecha.png" alt="Buy Now"></button> </a>
         </div>
     </section>
 
     <?php include("./footer.php"); ?>
 
-      <!-- LINK DE JS DE BOOTSTRAP -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+    <!-- LINK DE JS DE BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 
 </body>
 </html>

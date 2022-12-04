@@ -5,15 +5,15 @@
             <div class="footer">
 
             <div class="option-footer">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemtRoRylurNw2Df5dTvkCta_U1KXz5H_1vDNNbXsaarty-lA/viewform?usp=sf_link" target="_blank">Ayudanos a mejorar</a>
                 <a href="#!">Condiciones de uso</a>
-                <a href="#!">Preguntas frecuentes</a>
                 <a href="#!">Politicas de privacidad</a>
             </div>
 
             <div class="option-footer">
                 <a href="#!">Nosotros</a>
                 <a href="#!">Términos legales</a>
-                <a href="#!">Centro de ayuda</a>
+                <a href="#!">Preguntas frecuentes</a>
             </div>
 
             <div class="redes-container">
