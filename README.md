@@ -1,3 +1,3 @@
 # tpFinalBackendPotreroEDLP
 
-Pagina --> http://tomander.eshost.com.ar/
+Ecommerce desarrolado con php --> http://tomander.eshost.com.ar/
